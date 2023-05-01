@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>SIMULASI KREDIT</title>
+    <style>
+      /* styling for form and input elements */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      input[type="number"] {
+        margin-left: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+      button[type="submit"] {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      /* styling for result section */
+      section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SIMULASI KREDIT</h1>
+    <form id="form">
+      <label>
+        Harga Properti:
+        <input type="number" id="harga" required>
+      </label>
+      <label>
+        DP (% dari harga):
+        <input type="number" id="dp" step="0.01" required>
+      </label>
+      <label>
+        Bunga (% per tahun):
+        <input type="number" id="bunga" step="0.01" required>
+      </label>
+      <label>
+        Durasi (tahun):
+        <input type="number" id="durasi" required>
+      </label>
+      <label>
+        Biaya Notaris:
+        <input type="number" id="biaya-notaris" required>
+      </label>
+      <label>
+        Biaya Appraisal:
+        <input type="number" id="biaya-appraisal" required>
+      </label>
+      <label>
+        Biaya Administrasi:
+        <input type="number" id="biaya-admin" required>
+      </label>
+      <label>
+        Biaya Asuransi (% dari harga):
+        <input type="number" id="biaya-asuransi" step="0.01" required>
+      </label>
+      <label>
+        Biaya Provisi (% dari harga):
+        <input type="number" id="biaya-provisi" step="0.01" required>
+      </label>
+      <label>
+        BPHTB (% dari harga):
+        <input type="number" id="bphtb" step="0.01" required>
+      </label>
+      <button type="submit">Hitung</button>
+    </form>
+    <section>
+      <p id="angsuran"></p>
+      <p id="total"></p>
+      <p id="total-dp"></p>
+    </section>
+    <script>
+      function hitungKredit() {
+        const harga = document.getElementById("harga").value;
+        const dp = document.getElementById("dp").value;
+        const bunga = document.getElementById("bunga").value;
+        const durasi
